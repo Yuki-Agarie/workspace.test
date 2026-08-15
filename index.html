@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="theme-color" content="#ececec">
+<link rel="apple-touch-icon" href="./apple-touch-icon.png">
+
+<title>Simple Text Editor</title>
+<link type="text/css" rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+<div id="toolbar">
+<div id="toolbarLeft">
+<span class="Tools">
+    <button id="openButton">開く</button>
+<input id="fileInput" type="file" accept=".txt,.html,.htm,.css,.js,.json,.xml,.php,.md,.ini,.csv,.log,.dat" hidden>
+<!-- .docx追加版、対応未実装のためコメントアウト
+<input id="fileInput" type="file" accept=".txt,.html,.htm,.css,.js,.json,.xml,.php,.md,.ini,.csv,.log,.dat,.docx" hidden> -->
+<span style="margin-left:20px;">ファイル名：
+<input id="fileName" value="text.txt" style="width:100px;"></span>
+<button id="saveButton">保存</button>
+</span>
+<span class="Tools">
+<button id="clearButton">オールクリア</button>
+</span>
+<span class="Tools">
+<button id="undoButton">元に戻す</button>
+<button id="redoButton">やり直し</button>
+</span>
+<!-- <span class="spacer"></span> -->
+<span class="Tools">
+<button id="tabButton">TAB</button>
+<button id="untabButton">Shift+TAB</button>
+<button id="deleteTabButton">TAB削除</button>
+</span>
+<span class="Tools">
+<button id="homeButton">←</button>
+<button id="endButton">→</button>
+<button id="topButton">⇑</button>
+<button id="bottomButton">⇓</button>
+</span>
+<span class="Tools" style="margin-left:20px;">
+    行：
+    <input
+        id="jumpLine"
+        type="number"
+        min="1"
+        style="width:50px;">
+    <button id="jumpButton">ジャンプ</button>
+</span>
+<span class="Tools" style="margin-left:20px;">
+文字サイズ：
+<select id="fontSize">
+    <option value="13">小</option>
+    <option value="15" selected>中</option>
+    <option value="18">大</option>
+</select>
+</span>
+</div>
+<div id="toolbarRight">
+<span><label>
+    <input type="checkbox"
+           id="autoSave"
+           checked><br>
+    自動保存
+</label></span>
+     <span style="margin-left:16px;">
+        文字コード：<br>
+        <span id="encoding">-</span>
+    </span>
+<span style="margin-left:16px;">
+    改行：<br>
+    <select id="newline">
+        <option value="LF">LF</option>
+        <option value="CRLF">CRLF</option>
+    </select>
+</span>
+</div>
+</div>
+
+<div id="editorArea">
+<div id="editorContainer">
+    <div id="lineNumbers">1</div>
+    <textarea id="editor" spellcheck="false"></textarea>
+</div>
+</div>
+    <div id="statusBar">
+    <span id="statusFileName">
+       ファイル名: text.txt
+    </span>
+    <span style="margin-left:20px;" id="statusLines">行: 1</span>
+    <span style="margin-left:20px;" id="statusChars">
+        文字: 0
+    </span>
+    </div>
+<script type="text/javascript" rel="script" src="./script.js"></script>
+</body>
+</html>
