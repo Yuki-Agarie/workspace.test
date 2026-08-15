@@ -1,0 +1,158 @@
+/* 頭一行開けておきたい乙女心 */
+html,body{
+    margin:0;
+    padding:0;
+    height:100%;
+    font-family:sans-serif;
+}
+
+body{
+    display:flex;
+    flex-direction:column;
+}
+
+#toolbar{
+
+    position:fixed;
+
+    top:20px;
+    left:20px;
+    right:20px;
+
+    z-index:1000;
+
+     display:flex;
+    align-items:flex-start;
+
+height:80px;
+box-sizing:border-box;
+
+    overflow-x:auto;
+    overflow-y:scroll;
+
+    background:#ececec;
+    border-bottom:1px solid #ccc;
+
+}
+
+#toolbarLeft{
+    flex:8;
+/*    min-width:max-content; */
+  font-size: 12px;
+
+padding-top:8px;
+padding-left:20px;
+padding-right:4px;
+padding-bottom:8px;
+
+	display: flex;
+	justify-content:flex-start;
+	align-content:flex-start;
+	flex-wrap: wrap;
+}
+
+.Tools {
+ display: inline-block;
+  white-space: nowrap;
+  flex-shrink: 0;
+  margin: 3px 5px;
+}
+
+.Tools button{
+	padding: 4px 12px;
+    margin: 0 1px;
+box-shadow: 2px 4px 3 #a9a9a9;
+}
+
+#toolbarRight{
+
+    flex:2;
+    align-self:center;
+
+    display:flex;
+
+font-size:12px;
+padding-left:4px;
+padding-right:20px;
+justify-content:flex-end;
+    align-items:center;
+    gap:5px;
+white-space:nowrap;
+
+}
+
+#editorArea{
+    position:fixed;
+    display:flex;
+    flex-direction:column;
+
+    top:104px;
+    left:20px;
+    right:20px;
+    bottom:58px;
+
+}
+
+#editorContainer{
+    flex:1;
+    display:flex;
+    overflow:hidden;
+    border:3px solid #bbb;
+    border-radius:8px 8px 0 0;
+}
+
+#lineNumbers{
+    width:40px;
+    overflow:hidden;
+    background:#f5f5f5;
+    border-right:1px solid #ccc;
+
+    font-family:Consolas,Menlo,monospace;
+    font-size:15px;
+    line-height:1.5;
+
+    text-align:right;
+    padding:10px 8px;
+    box-sizing:border-box;
+
+    color:#666;
+    user-select:none;
+    white-space:pre;
+}
+
+#editor{
+    flex:1;
+
+    resize:none;
+    border:none;
+    outline:none;
+
+    padding:12px;
+
+    font-family:Consolas,Menlo,monospace;
+    font-size:15px;
+    line-height:1.5;
+    tab-size:4;
+
+    box-sizing:border-box;
+}
+
+#statusBar{
+    position:fixed;
+    left:20px;
+    right:20px;
+    bottom:20px;
+    height:30px;
+    display:flex;
+    align-items:center;
+justify-content:flex-start;
+    padding:0 10px;
+    border:3px solid #bbb;
+    border-radius:8px;
+    background:#f5f5f5;
+}
+
+.spacer{
+    width:50px;
+    flex-shrink:0;
+}
